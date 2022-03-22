@@ -2,7 +2,7 @@ const { request } = require("axios");
 const Vonage = require("@vonage/server-sdk");
 const {
   extractProductsFromHTML,
-  formatProducts,
+  formatTextMessage,
 } = require("./helpers/helpers.js");
 const {
   VONAGE_API_KEY,
@@ -30,7 +30,7 @@ module.exports.getRefurbishedProducts = async (event, context, callback) => {
       apiSecret: VONAGE_API_SECRET,
     });
 
-    const text = formatProducts(refurbishedProducts, productName);
+    const text = formatTextMessage(refurbishedProducts, productName);
 
     console.log("Preparing to send SMS...");
 
