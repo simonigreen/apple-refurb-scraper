@@ -19,7 +19,7 @@ module.exports.getRefurbishedProducts = async (event, context, callback) => {
     `https://www.apple.com/uk/shop/refurbished/${productUrl}`
   );
 
-  const refrubishedProducts = extractProductsFromHTML(
+  const refurbishedProducts = extractProductsFromHTML(
     responseHTML,
     productName
   );
@@ -30,7 +30,7 @@ module.exports.getRefurbishedProducts = async (event, context, callback) => {
       apiSecret: VONAGE_API_SECRET,
     });
 
-    const text = formatProducts(refrubishedProducts, productName);
+    const text = formatProducts(refurbishedProducts, productName);
 
     console.log("Preparing to send SMS...");
 
@@ -55,8 +55,8 @@ module.exports.getRefurbishedProducts = async (event, context, callback) => {
   }
 
   console.log(
-    `We found ${refrubishedProducts.length} Apple refburbished products for ${productName}`
+    `We found ${refurbishedProducts.length} Apple refurbished products for ${productName}`
   );
 
-  return refrubishedProducts;
+  return refurbishedProducts;
 };

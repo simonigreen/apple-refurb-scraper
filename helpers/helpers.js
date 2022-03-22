@@ -21,13 +21,13 @@ function extractProductsFromHTML(html, productName) {
 
 function formatProducts(list, productName) {
   if (list.length === 0) {
-    return `Sorry, we did not find any Apple refburbished products for ${productName}`;
+    return `Sorry, we did not find any Apple refurbished products for ${productName}`;
   }
   return list.reduce((acc, product, index) => {
     return `${acc}Item #${index + 1} ${product.description}\n\n${
       product.link
     }\n\n`;
-  }, `We found ${list.length} Apple refburbished products for ${productName}:\n\n`);
+  }, `We found ${list.length} Apple refurbished products for ${productName}:\n\n`);
 }
 
 module.exports = { extractProductsFromHTML, formatProducts };
